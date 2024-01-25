@@ -6,8 +6,6 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Create a directory for mounting
 WORKDIR /csc4100
-# attempt to fix weird bug where PWD is 'csv4100' instead of '/csc4100' ????
-ENV PWD /csc4100
 
 # Install necessary tools for development
 # https://stackoverflow.com/questions/66808788/docker-can-you-cache-apt-get-package-installs
@@ -23,8 +21,8 @@ RUN git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/gith
 
 # Setup python3 venv
 RUN python3 -m venv .venv
-ENV VIRTUAL_ENV .venv
-ENV PATH .venv/bin:$PATH
+ENV VIRTUAL_ENV /csc4100/.venv
+ENV PATH /csc4100/.venv/bin:$PATH
 
 # Install gdbgui
 RUN python3 -m pip install gdbgui

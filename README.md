@@ -1,5 +1,5 @@
 # x86-64 on ARM
-### A simple Dockerfile to develop, compile, run, and debug x86-64 assembly on ARM64. This was made for my Operating Systems class, since it teaches x86 assembly, but I am on an M1 Mac.
+### A simple Dockerfile to develop, compile, run, and debug x86-64 assembly on ARM64. This was made for my Operating Systems class, since it uses x86 assembly, but I am on an M1 Mac.
 
 ## Features
 * Supports local development with volume mounting (Files in the `./csc4100` directory are mounted to `/csc4100` in the container and vice versa)

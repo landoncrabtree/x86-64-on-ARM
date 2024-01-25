@@ -19,6 +19,9 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
 # Neovim Copilot
 RUN git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/github/start/copilot.vim
 
+# Rosetta2 debugging
+RUN sed -i 's/^kernel.yama.ptrace_scope = 0$/kernel.yama.ptrace_scope = 1/' /etc/sysctl.d/10-ptrace.conf
+
 # Setup python3 venv
 RUN python3 -m venv .venv
 ENV VIRTUAL_ENV /csc4100/.venv

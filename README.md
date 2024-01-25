@@ -33,9 +33,9 @@ ROSETTA_DEBUGSERVER_PORT=1234 ./program & gdb
 From here, you can use GDB as normal, `b main`, `continue`, `s`, etc.
 
 ### gdbgui
-gdbgui is a GUI-based debugger for GDB. It is pre-installed in the container and can be started by running `gdbgui -r` in the container. It is accessible from the host machine by navigating to `localhost:5000` in a web browser.
+gdbgui is a GUI-based debugger for GDB. It is pre-installed in the container. It is accessible from the host machine by navigating to `localhost:5000` in a web browser.
 1. You will need two terminals for this: (1) for the gdbgui daemon and (2) the GDB server
-2. In terminal (1) Run gdbgui in the container (`gdbgui -g "gdb -ex 'set architecture i386:x86-64'"`)
+2. In terminal (1) Run gdbgui in the container (`gdbgui -g "gdb -ex 'set architecture i386:x86-64'" -r`)
 3. In terminal (2) Run the program with `ROSETTA_DEBUGSERVER_PORT=1234 ./program`
 4. Navigate to `localhost:8000` in a web browser on the host machine
 5. Select the dropdown (top left) and choose 'gdbserver' and connect to `localhost:1234`.

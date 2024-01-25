@@ -21,6 +21,7 @@ RUN git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/gith
 
 # Rosetta2 debugging
 RUN sed -i 's/^kernel.yama.ptrace_scope = 0$/kernel.yama.ptrace_scope = 1/' /etc/sysctl.d/10-ptrace.conf
+RUN echo 'echo "0" | tee /proc/sys/kernel/yama/ptrace_scope &> /dev/null' >> ~/.bashrc
 
 # Setup python3 venv
 RUN python3 -m venv .venv

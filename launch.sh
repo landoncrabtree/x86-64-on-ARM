@@ -37,7 +37,7 @@ then
         	docker start CSC4100 && docker exec -it CSC4100 bash
     	fi
 	else
-    	docker run --name "CSC4100" -v "$(pwd)/csc4100:/csc4100" -it -p 5000:5000 csc4100
+    		docker run --name "CSC4100" -v "$(pwd)/csc4100:/csc4100" -it -p 8000:5000 csc4100
 	fi
     exit 1
 fi

@@ -14,10 +14,7 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
     rm -f /etc/apt/apt.conf.d/docker-clean \
     && apt-get update \
     && apt-get -y --no-install-recommends install \
-        gcc binutils git gdb nasm neovim python3 python3-venv python3-pip g++ make cmake nodejs npm wget curl
-
-# Neovim Copilot
-RUN git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/github/start/copilot.vim
+        gcc binutils git gdb nasm neovim python3 python3-venv python3-pip g++ make cmake wget curl
 
 # Rosetta2 debugging
 RUN sed -i 's/^kernel.yama.ptrace_scope = 0$/kernel.yama.ptrace_scope = 1/' /etc/sysctl.d/10-ptrace.conf
